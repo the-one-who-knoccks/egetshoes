@@ -1,11 +1,44 @@
 import styled from 'styled-components'
 import { darken } from 'polished'
 
+export const Filter = styled.div`
+  margin-bottom: 3rem;
+  input {
+    width: 50%;
+  }
+
+  /* @media (max-width: 945px) {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 760px) {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
+  } */
+`
+
 export const ProductList = styled.ul`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
   list-style: none;
+
+  @media (max-width: 945px) {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 760px) {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
+  }
 
   li {
     display: flex;

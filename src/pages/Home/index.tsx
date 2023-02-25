@@ -3,13 +3,15 @@ import { MdAddShoppingCart } from 'react-icons/md'
 import { useAsyncEffect } from 'use-async-effect'
 import { connect, DispatchProp } from 'react-redux'
 import ReturnType from 'typescript'
-import { ProductList } from './styles'
+import { Filter, ProductList } from './styles'
 import api from '../../services/api'
 import { formatPrice } from '../../util/format'
 import { IProduct } from '../../types'
 
 import { RootState } from '../../store/modules/rootReducer'
 import * as CartActions from '../../store/modules/cart/actions'
+import { Input } from '../AdressForm/Input'
+import { Funnel } from 'phosphor-react'
 
 type amountProduct = { [key: number]: any }
 const amountObject: amountProduct = {}
@@ -28,6 +30,8 @@ type Props = StateProps & DispatchProp
 
 function Home(props: Props) {
   const [products, setProducts] = useState<IProduct[]>([])
+
+  const [query, setQuery] = useState('')
 
   useAsyncEffect(async () => {
     const response = await api.get('products')
@@ -51,23 +55,37 @@ function Home(props: Props) {
   }
 
   return (
-    <ProductList>
-      {products.map((product) => (
-        <li key={product.id}>
-          <img src={product.image} alt={product.title} />
-          <strong>{product.title}</strong>
-          <span>{product.priceFormatted}</span>
-          <button type="button" onClick={() => handleAddProduct(product)}>
-            <div>
-              <MdAddShoppingCart size={16} color="#fff" />
-              {props.amount[product.id] || 0}
-            </div>
-            <span>Adicionar ao Carrinho</span>
-          </button>
-        </li>
-      ))}
-      )
-    </ProductList>
+    <>
+      <Filter>
+        <Input
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="Pesquisar items..."
+          value={query}
+          icon={Funnel}
+        />
+      </Filter>
+      <ProductList>
+        {products
+          .filter((product) =>
+            product.title.toLowerCase().trim().includes(query),
+          )
+          .map((product) => (
+            <li key={product.id}>
+              <img src={product.image} alt={product.title} />
+              <strong>{product.title}</strong>
+              <span>{product.priceFormatted}</span>
+              <button type="button" onClick={() => handleAddProduct(product)}>
+                <div>
+                  <MdAddShoppingCart size={16} color="#fff" />
+                  {props.amount[product.id] || 0}
+                </div>
+                <span>Adicionar ao Carrinho</span>
+              </button>
+            </li>
+          ))}
+        )
+      </ProductList>
+    </>
   )
 }
 
