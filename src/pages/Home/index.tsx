@@ -74,7 +74,7 @@ function Home(props: Props) {
               <img src={product.image} alt={product.title} />
               <strong>{product.title}</strong>
               <span>{product.priceFormatted}</span>
-              <button type="button" onClick={() => handleAddProduct(product)}>
+              <button onClick={() => handleAddProduct(product)}>
                 <div>
                   <MdAddShoppingCart size={16} color="#fff" />
                   {props.amount[product.id] || 0}

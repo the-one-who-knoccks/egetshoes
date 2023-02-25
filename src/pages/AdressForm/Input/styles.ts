@@ -36,7 +36,7 @@ export const InputStyleContainer = styled.div<InputStyledContainerProps>`
   }
 
   &:focus-within {
-    border-color: ${(props) => props.theme.colors['yellow-dark']};
+    border-color: ${(props) => props.theme.colors['light-purple']};
   }
 
   ${(props) =>

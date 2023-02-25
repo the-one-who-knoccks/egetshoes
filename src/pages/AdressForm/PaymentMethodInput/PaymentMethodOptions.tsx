@@ -2,8 +2,7 @@ import { CreditCard, Bank, Money } from 'phosphor-react'
 import { useFormContext } from 'react-hook-form'
 import { PaymentMethodInput } from '../PaymentMethodInput'
 import { PaymentMethodOptionsContainer } from '../styles'
-import { Button } from './styles'
-
+import { Button } from '../../../components/Button'
 export const paymentMethods = {
   credit: {
     label: 'Cartão de Crédito',
@@ -20,11 +19,11 @@ export const paymentMethods = {
 }
 
 export function PaymentMethodOptions() {
-  // const {
-  //   register,
-  //   formState: { errors },
-  // } = useFormContext()
-  // const paymentMethodError = errors?.paymentMethod?.message as unknown as string
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext()
+  const paymentMethodError = errors?.paymentMethod?.message as unknown as string
 
   return (
     <PaymentMethodOptionsContainer>
@@ -38,8 +37,8 @@ export function PaymentMethodOptions() {
           // {...register('paymentMethod')}
         />
       ))}
-      <Button type="submit">Finalizar compra</Button>
-      {/* {paymentMethodError && <p>{paymentMethodError}</p>} */}
+      <Button text="Finalizar compra" />
+      {paymentMethodError && <p>{paymentMethodError}</p>}
     </PaymentMethodOptionsContainer>
   )
 }

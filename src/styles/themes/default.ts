@@ -18,8 +18,8 @@ export const defaultTheme = {
     'yellow-dark': '#c47f17',
     yellow: '#dbac2c',
     'yellow-light': '#f1e9c9',
-
-    purple: '#c47f17',
+    'light-purple': '#7159c1',
+    purple: '#766ec5',
 
     error: '#ff0000',
   },

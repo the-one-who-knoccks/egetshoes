@@ -8,17 +8,17 @@ export const PaymentMethodContainer = styled.div`
   }
 
   input:checked + label div {
-    background: ${(props) => props.theme.colors['yellow-light']};
-    border-color: ${(props) => props.theme.colors['yellow-dark']};
-    color: ${(props) => props.theme.colors['yellow-dark']};
+    background: ${(props) => props.theme.colors.purple};
+    border-color: ${(props) => props.theme.colors.purple};
+    color: ${(props) => props.theme.colors.purple};
 
     &:hover {
-      background: ${(props) => props.theme.colors['yellow-light']};
-      color: ${(props) => props.theme.colors['yellow-dark']};
+      background: ${(props) => props.theme.colors.purple};
+      color: ${(props) => props.theme.colors.purple};
     }
 
     svg {
-      color: ${(props) => props.theme.colors['yellow-dark']};
+      color: ${(props) => props.theme.colors.purple};
     }
   }
 `
@@ -48,24 +48,4 @@ export const ContentContainer = styled.div`
   }
 
   user-select: none;
-`
-
-export const Button = styled.button`
-  background: #7159c1;
-  color: #fff;
-  border: 0;
-  border-radius: 4px;
-  padding: 14px 20px;
-
-  font-weight: bold;
-  text-transform: uppercase;
-  transition: background 180ms ease-in-out;
-  @media (max-width: 520px) {
-    margin-top: 20px;
-    width: 100%;
-    padding: 20px;
-  }
-  &:hover {
-    background: ${darken(0.04, '#7159c1')};
-  }
 `

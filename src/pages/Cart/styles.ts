@@ -14,24 +14,6 @@ export const Container = styled.main`
     @media (max-width: 520px) {
       flex-direction: column-reverse;
     }
-    button {
-      background: #7159c1;
-      color: #fff;
-      border: 0;
-      border-radius: 4px;
-      padding: 12px 20px;
-      font-weight: bold;
-      text-transform: uppercase;
-      transition: background 180ms ease-in-out;
-      @media (max-width: 520px) {
-        margin-top: 20px;
-        width: 100%;
-        padding: 20px;
-      }
-      &:hover {
-        background: ${darken(0.04, '#7159c1')};
-      }
-    }
   }
 `
 

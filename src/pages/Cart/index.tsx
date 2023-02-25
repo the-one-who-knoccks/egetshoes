@@ -13,6 +13,7 @@ import * as CartActions from '../../store/modules/cart/actions'
 import { IProduct } from '../../types'
 import { formatPrice } from '../../util/format'
 import { useNavigate } from 'react-router-dom'
+import { Button } from '../../components/Button'
 const mapStateToProps = (state: RootState) => ({
   products: state.cart.products.map((product) => ({
     ...product,
@@ -76,14 +77,14 @@ function Cart(props: Props) {
                       type="button"
                       onClick={() => decrementProduct(product)}
                     >
-                      <MdRemoveCircleOutline size={20} color="#7159c2" />
+                      <MdRemoveCircleOutline size={20} color="#766ec5" />
                     </button>
                     <input type="number" readOnly value={product.amount} />
                     <button
                       type="button"
                       onClick={() => incrementProduct(product)}
                     >
-                      <MdAddCircleOutline size={20} color="#7159c2" />
+                      <MdAddCircleOutline size={20} color="#766ec5" />
                     </button>
                   </div>
                 </td>
@@ -91,28 +92,35 @@ function Cart(props: Props) {
                   <strong>{product.subtotal}</strong>
                 </td>
                 <td>
-                  <button
-                    type="button"
+                  <Button
+                    text=""
+                    icon={MdDelete}
                     onClick={() =>
                       dispatch(CartActions.removeToCart(product.id))
                     }
-                  >
-                    <MdDelete size={20} color="#7159c1" />
-                  </button>
+                  ></Button>
                 </td>
               </tr>
             </tbody>
           </ProductTable>
         ))}
-        <footer>
-          <button onClick={handleConfirmOrder} type="button">
-            Endereço | Finalizar pedido
-          </button>
-          <Total>
-            <span>Total</span>
-            <strong>{total}</strong>
-          </Total>
-        </footer>
+
+        {products <= 0 ? (
+          <footer>
+            <Button
+              disabled
+              onClick={handleConfirmOrder}
+              text="Endereço | Finalizar compra"
+            />
+          </footer>
+        ) : (
+          <footer>
+            <Button
+              onClick={handleConfirmOrder}
+              text="Endereço | Finalizar compra"
+            />
+          </footer>
+        )}
       </Container>
     </>
   )

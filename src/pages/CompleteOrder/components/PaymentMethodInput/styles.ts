@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const PaymentMethodContainer = styled.div`
   input {
@@ -7,19 +7,18 @@ export const PaymentMethodContainer = styled.div`
   }
 
   input:checked + label div {
-    background: ${(props) => props.theme.colors['yellow-light']};
-    border-color: ${(props) => props.theme.colors['yellow-dark']};
-    color: ${(props) => props.theme.colors['yellow-dark']};
+    background: ${(props) => props.theme.colors['light-purple']};
+    border-color: ${(props) => props.theme.colors['light-purple']};
+    color: ${(props) => props.theme.colors.white};
 
     &:hover {
-      background: ${(props) => props.theme.colors['yellow-light']};
-      color: ${(props) => props.theme.colors['yellow-dark']};
+      background: ${(props) => props.theme.colors['light-purple']};
+      color: ${(props) => props.theme.colors.white};
     }
 
     svg {
-    color: ${(props) => props.theme.colors['yellow-dark']};
-  }
-
+      color: ${(props) => props.theme.colors.white};
+    }
   }
 `
 
