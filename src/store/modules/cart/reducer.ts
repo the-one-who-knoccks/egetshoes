@@ -1,3 +1,5 @@
+/* eslint-disable import/export */
+import { createSlice } from '@reduxjs/toolkit'
 import produce from 'immer'
 import { CartActionTypes, ICartState } from './types'
 
@@ -32,6 +34,9 @@ export default function cart(
           draft.products.splice(productIndex, 1)
         }
       })
+    case 'CLEAR_CART':
+      return initialState
+
     case 'UPDATE_AMOUNT': {
       if (action.amount <= 0) {
         return state
@@ -49,4 +54,7 @@ export default function cart(
     default:
       return state
   }
+}
+export function clearCart(id: number): any {
+  throw new Error('Function not implemented.')
 }

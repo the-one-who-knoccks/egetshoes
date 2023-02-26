@@ -1,7 +1,9 @@
 import { MapPinLine, CurrencyDollar } from 'phosphor-react'
+import { DispatchProp, useDispatch } from 'react-redux'
 import { useTheme } from 'styled-components'
 import { Button } from '../../../../components/Button'
 import { TitleText } from '../../../../components/Typography'
+import { RootState } from '../../../../store/modules/rootReducer'
 import { AddressForm } from '../AdressForm'
 import { PaymentMethods } from '../PaymentMethods'
 
@@ -9,6 +11,8 @@ import { SectionTitle } from '../SectionTitle'
 import { CompleteOrderFormContainer, FormSectionContainer } from './styles'
 
 export function CompleteOrderForm() {
+  const dispatch = useDispatch()
+
   return (
     <CompleteOrderFormContainer>
       <TitleText size="xs" color={'text-h1'}>
@@ -31,7 +35,12 @@ export function CompleteOrderForm() {
         />
 
         <PaymentMethods />
-        <Button type="submit" text="Finalizar pedido" />
+
+        <Button
+          type="submit"
+          text="Finalizar pedido"
+          onClick={() => dispatch({ type: 'CLEAR_CART' })}
+        />
       </FormSectionContainer>
     </CompleteOrderFormContainer>
   )

@@ -13,17 +13,19 @@ import { RootState } from '../../store/modules/rootReducer'
 import * as CartActions from '../../store/modules/cart/actions'
 import { Input } from '../../components/Input'
 import { Funnel } from 'phosphor-react'
+import { bindActionCreators } from 'redux'
 
 type amountProduct = { [key: number]: any }
 const amountObject: amountProduct = {}
 const mapStateToProps = (state: RootState) => ({
   cart: state.cart.products,
   amount: state.cart.products.reduce((amount, currentValue) => {
-    // eslint-disable-next-line no-param-reassign
     amount[currentValue.id] = currentValue.amount
     return amount
   }, amountObject),
 })
+const mapDispatchToProps = (dispatch: any) =>
+  bindActionCreators(CartActions, dispatch)
 
 type StateProps = ReturnType<typeof mapStateToProps>
 
@@ -54,7 +56,7 @@ function Home(props: Props) {
     )
     toast.success('Produto adicionado ao carrinho', {
       position: 'top-right',
-      autoClose: 5000,
+      autoClose: 2500,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
@@ -86,7 +88,7 @@ function Home(props: Props) {
               <span>{product.priceFormatted}</span>
               <button onClick={() => handleAddProduct(product)}>
                 <div>
-                  <MdAddShoppingCart size={16} color="#fff" />
+                  <MdAddShoppingCart size={16} color="#fff" />{' '}
                   {props.amount[product.id] || 0}
                 </div>
                 <span>Adicionar ao Carrinho</span>

@@ -1,7 +1,7 @@
 import { CompleteOrderForm } from './components/CompleteOrderForm'
 
 import { CompleteOrderContainer } from './styles'
-import { ToastContainer, toast } from 'react-toastify'
+import { toast } from 'react-toastify'
 import * as zod from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm, FormProvider } from 'react-hook-form'
@@ -47,7 +47,7 @@ export function CompleteOrderPage() {
     })
     toast.success('Pedido enviado com sucesso!', {
       position: 'top-right',
-      autoClose: 5000,
+      autoClose: 2500,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,

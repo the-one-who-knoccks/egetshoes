@@ -5,7 +5,7 @@ import {
   MdDelete,
 } from 'react-icons/md'
 
-import { connect, DispatchProp } from 'react-redux'
+import { connect, DispatchProp, useDispatch } from 'react-redux'
 import ReturnType from 'typescript'
 import { Container, ProductTable, Total } from './styles'
 import { RootState } from '../../store/modules/rootReducer'
@@ -31,7 +31,9 @@ type StateProps = ReturnType<typeof mapStateToProps>
 type Props = StateProps & DispatchProp
 
 function Cart(props: Props) {
-  const { products, dispatch, total } = props
+  const { products, total } = props
+
+  const dispatch = useDispatch()
 
   const navigate = useNavigate()
 
@@ -41,6 +43,10 @@ function Cart(props: Props) {
 
   function decrementProduct(product: IProduct) {
     dispatch(CartActions.updateProductAmount(product.id, product.amount - 1))
+  }
+
+  function clearCart(product: IProduct) {
+    dispatch(CartActions.clearCart(product.id))
   }
 
   function handleConfirmOrder() {

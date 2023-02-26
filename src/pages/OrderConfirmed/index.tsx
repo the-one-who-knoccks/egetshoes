@@ -1,3 +1,4 @@
+/* eslint-disable no-constant-condition */
 import { OrderConfirmedContainer, OrderDetailsContainer } from './styles'
 
 import { useLocation, useNavigate } from 'react-router-dom'
@@ -9,10 +10,22 @@ import { paymentMethods } from '../CompleteOrder/components/PaymentMethods'
 import { useEffect } from 'react'
 import Illustration from '../../assets/Illustration.svg'
 import { ToastContainer } from 'react-toastify'
+import { connect, DispatchProp, useDispatch } from 'react-redux'
+import { RootState } from '../../store/modules/rootReducer'
+import * as CartActions from '../../store/modules/cart/actions'
+import { IProduct } from '../../types'
+const mapStateToProps = (state: RootState) => ({
+  products: state.cart.products.map((product) => ({
+    ...product,
+  })),
+})
 
 interface LocationType {
   state: OrderData
 }
+type StateProps = ReturnType<typeof mapStateToProps>
+
+type Props = StateProps & DispatchProp
 
 export function OrderConfirmed() {
   const { colors } = useTheme()
