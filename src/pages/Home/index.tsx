@@ -56,7 +56,7 @@ function Home(props: Props) {
     )
     toast.success('Produto adicionado ao carrinho', {
       position: 'top-right',
-      autoClose: 2500,
+      autoClose: 2000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
@@ -97,7 +97,6 @@ function Home(props: Props) {
           ))}
         <ToastContainer
           position="top-right"
-          autoClose={3000}
           hideProgressBar={false}
           newestOnTop={false}
           closeOnClick

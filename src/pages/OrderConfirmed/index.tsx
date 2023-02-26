@@ -10,10 +10,9 @@ import { paymentMethods } from '../CompleteOrder/components/PaymentMethods'
 import { useEffect } from 'react'
 import Illustration from '../../assets/Illustration.svg'
 import { ToastContainer } from 'react-toastify'
-import { connect, DispatchProp, useDispatch } from 'react-redux'
+import { DispatchProp, useDispatch } from 'react-redux'
 import { RootState } from '../../store/modules/rootReducer'
-import * as CartActions from '../../store/modules/cart/actions'
-import { IProduct } from '../../types'
+
 const mapStateToProps = (state: RootState) => ({
   products: state.cart.products.map((product) => ({
     ...product,
@@ -91,7 +90,6 @@ export function OrderConfirmed() {
       </OrderConfirmedContainer>
       <ToastContainer
         position="top-right"
-        autoClose={3000}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick

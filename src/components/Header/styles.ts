@@ -24,6 +24,10 @@ export const Cart = styled(Link)`
     opacity: 0.7;
   }
 
+  svg {
+    margin-bottom: 1rem;
+  }
+
   div {
     text-align: right;
     margin-right: 10px;
