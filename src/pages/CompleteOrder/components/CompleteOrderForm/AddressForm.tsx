@@ -25,14 +25,12 @@ export function AddressForm() {
         error={errors.cep?.message}
       />
       <Input
-        mask=""
         placeholder="Rua"
         className="street"
         {...register('street')}
         error={errors.street?.message}
       />
       <Input
-        mask={''}
         placeholder="Número"
         type="tel"
         {...register('number')}
@@ -45,7 +43,6 @@ export function AddressForm() {
         rightText="Opcional"
       />
       <Input
-        mask={''}
         placeholder="Bairro"
         {...register('district')}
         error={errors.district?.message}

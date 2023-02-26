@@ -1,32 +1,56 @@
 import { createGlobalStyle } from 'styled-components'
 
-export default createGlobalStyle`
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-    * {
-         margin: 0;
-         padding: 0;
-         outline: 0;
-         box-sizing: border-box;
+export const GlobalStyle = createGlobalStyle`
+  html {
+    scroll-behavior: smooth;
+  }
 
-    }
-    body
-    {
-        background: #191920  no-repeat center top ;
-        -webkit-font-smoothing: antialiased;
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-    }
+  li {
+    list-style: none;
+  }
 
-    body, input, button{
-        font: 14px Roboto, sans-serif;
-    }
-    #root{
-        max-width: 1020px;
+  button {
+    cursor: pointer;
+  }
+
+  body {
+    background: ${(props) => props.theme.colors.background};
+    color: ${(props) => props.theme.colors['base-text']};
+    -webkit-font-smoothing: antialiased;
+  }
+
+  :focus {
+    outline: 0;
+  }
+
+  #root {
+    max-width: 1020px;
         margin: 0 auto;
         padding: 0 20px 50px;
+  }
 
-    }
-    button {
-        cursor: pointer;
-    }
+  body, input, textarea, button { 
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 130%;
+  }
 
+  h1, h2, h3, h4, h5, h6 { 
+    font-family: 'Baloo 2', sans-serif;
+    color: ${(props) => props.theme.colors['base-title']};
+    line-height: 130%;
+  }
+
+  @media (max-width: 768px) {
+    html {
+      font-size: 87.5%;
+    }
+  }
 `
