@@ -2,12 +2,13 @@ import React, { useState } from 'react'
 import { MdAddShoppingCart } from 'react-icons/md'
 import { useAsyncEffect } from 'use-async-effect'
 import { connect, DispatchProp } from 'react-redux'
-import ReturnType from 'typescript'
+
 import { Filter, ProductList } from './styles'
 import api from '../../services/api'
 import { formatPrice } from '../../util/format'
 import { IProduct } from '../../types'
-
+import 'react-toastify/dist/ReactToastify.css'
+import { ToastContainer, toast } from 'react-toastify'
 import { RootState } from '../../store/modules/rootReducer'
 import * as CartActions from '../../store/modules/cart/actions'
 import { Input } from '../../components/Input'
@@ -52,6 +53,16 @@ function Home(props: Props) {
         priceFormatted: formatPrice(product.price),
       }),
     )
+    toast.success('Produto adicionado ao carrinho', {
+      position: 'top-right',
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: 'dark',
+    })
   }
 
   return (
@@ -83,6 +94,18 @@ function Home(props: Props) {
               </button>
             </li>
           ))}
+        <ToastContainer
+          position="top-right"
+          autoClose={3000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="dark"
+        />
       </ProductList>
     </>
   )
