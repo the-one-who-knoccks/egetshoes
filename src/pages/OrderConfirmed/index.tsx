@@ -5,9 +5,9 @@ import { OrderData } from '../CompleteOrder'
 import { Clock, CurrencyDollar, MapPin } from 'phosphor-react'
 import { useTheme } from 'styled-components'
 import { OrderConfirmedListInfo } from './OrderConfirmedListInfo'
-import { paymentMethods } from '../CompleteOrder/components/CompleteOrderForm/PaymentMethodOptions'
+import { paymentMethods } from '../CompleteOrder/components/PaymentMethods'
 import { useEffect } from 'react'
-
+import Illustration from '../../assets/Illustration.svg'
 interface LocationType {
   state: OrderData
 }
@@ -68,7 +68,7 @@ export function OrderConfirmed() {
             }
           />
         </OrderDetailsContainer>
-        <img src={'Illustration.png'} alt="" />
+        <img src={Illustration} alt="" />
       </section>
     </OrderConfirmedContainer>
   )

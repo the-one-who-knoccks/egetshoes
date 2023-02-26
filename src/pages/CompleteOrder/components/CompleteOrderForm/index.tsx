@@ -1,47 +1,38 @@
-import { SectionTitle } from '../SectionTitle'
-import { CompleteOrderFormContainer, FormSectionContainer } from './styles'
 import { MapPinLine, CurrencyDollar } from 'phosphor-react'
 import { useTheme } from 'styled-components'
-import { AddressForm } from './AddressForm'
-import { PaymentMethodOptions } from './PaymentMethodOptions'
-import ptBR from 'date-fns/locale/pt-BR'
-import { format } from 'date-fns'
-import { useState } from 'react'
 import { Button } from '../../../../components/Button'
+import { TitleText } from '../../../../components/Typography'
+import { AddressForm } from '../AdressForm'
+import { PaymentMethods } from '../PaymentMethods'
+
+import { SectionTitle } from '../SectionTitle'
+import { CompleteOrderFormContainer, FormSectionContainer } from './styles'
 
 export function CompleteOrderForm() {
-  const [actualDay] = useState(new Date())
-  const theme = useTheme()
+  const { colors } = useTheme()
 
   return (
     <CompleteOrderFormContainer>
-      <h1>Complete seu pedido</h1>
-
+      <TitleText size="xs" color={'text-h1'}>
+        Complete seu pedido
+      </TitleText>
       <FormSectionContainer>
         <SectionTitle
+          icon={<MapPinLine size={22} />}
           title="Endereço de entrega"
-          subtitle="Informe o endereço onde deseja receber seu pedido"
-          icon={<MapPinLine size={22} color={theme.colors.purple} />}
+          subtitle="Infome o endereço onde deseja receber o seu pedido"
         />
-
-        <span>
-          {format(actualDay, 'dd MMMM yyyy, HH:MM', {
-            locale: ptBR,
-          })}
-        </span>
 
         <AddressForm />
       </FormSectionContainer>
-
       <FormSectionContainer>
         <SectionTitle
+          icon={<CurrencyDollar size={22} />}
           title="Pagamento"
           subtitle="O pagamento é feito na entrega. Escolha a forma que deseja pagar"
-          icon={<CurrencyDollar size={22} color={theme.colors.purple} />}
         />
 
-        <PaymentMethodOptions />
-        <Button text="Confirmar pedido" type="submit" />
+        <PaymentMethods />
       </FormSectionContainer>
     </CompleteOrderFormContainer>
   )

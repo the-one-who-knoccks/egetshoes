@@ -4,9 +4,14 @@ export const OrderConfirmedContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
-
   padding: 0 1rem;
   margin: 5rem auto 0;
+
+  & img {
+    width: 20%;
+    right: 20rem;
+    position: relative;
+  }
 
   > div {
     h1 {
@@ -22,26 +27,17 @@ export const OrderConfirmedContainer = styled.div`
     }
   }
 
-  img {
-    max-width: 100%;
-    margin-right: 15rem;
-  }
-
   @media (max-width: 1140px) {
     > div {
       text-align: center;
     }
-
-    img {
-      max-width: 100%;
-      margin-right: 2rem;
-    }
   }
 
   @media (max-width: 600px) {
-    img {
-      max-width: 100%;
-      margin-right: 2rem;
+    & img {
+      width: 20%;
+      right: 15rem;
+      position: relative;
     }
   }
 
@@ -54,6 +50,12 @@ export const OrderConfirmedContainer = styled.div`
       flex-direction: column;
       align-items: center;
       gap: 1rem;
+
+      & img {
+        position: relative;
+        left: 10rem;
+        bottom: 12rem;
+      }
     }
   }
 `
@@ -61,8 +63,8 @@ export const OrderConfirmedContainer = styled.div`
 export const OrderDetailsContainer = styled.div`
   padding: 2.5rem;
   border-radius: 10px;
-  background: ${(props) => props.theme.colors.background};
-  min-width: 32rem;
+  background: ${(props) => props.theme.colors.white};
+
   flex-direction: column;
   gap: 2rem;
   position: relative;
@@ -74,7 +76,7 @@ export const OrderDetailsContainer = styled.div`
     inset: -1px;
     z-index: -1;
     border-radius: 7px 37px;
-    background: ${(props) => props.theme.colors['yellow-dark']};
+    background: ${(props) => props.theme.colors.purple};
   }
 
   @media (max-width: 600px) {

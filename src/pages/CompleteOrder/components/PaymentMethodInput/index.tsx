@@ -1,24 +1,25 @@
-import { PaymentMethodContainer, ContentContainer } from './styles'
+/* eslint-disable react/display-name */
 import { forwardRef, InputHTMLAttributes, ReactNode } from 'react'
+import { PaymentMethodInputContainer, Content } from './styles'
 
-type PaymentMethodProps = InputHTMLAttributes<HTMLInputElement> & {
+type PaymentMethodsInputProps = InputHTMLAttributes<HTMLInputElement> & {
   icon: ReactNode
   label: string
 }
 
 export const PaymentMethodInput = forwardRef<
   HTMLInputElement,
-  PaymentMethodProps
->(({ icon, label, id, ...props }, ref) => {
+  PaymentMethodsInputProps
+>(({ id, icon, label, ...props }, ref) => {
   return (
-    <PaymentMethodContainer>
+    <PaymentMethodInputContainer>
       <input id={id} type="radio" {...props} name="paymentMethod" ref={ref} />
       <label htmlFor={id}>
-        <ContentContainer>
+        <Content>
           {icon}
           {label}
-        </ContentContainer>
+        </Content>
       </label>
-    </PaymentMethodContainer>
+    </PaymentMethodInputContainer>
   )
 })

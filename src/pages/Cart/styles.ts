@@ -115,12 +115,13 @@ export const ProductTable = styled.table`
     align-items: center;
     justify-content: center;
     input {
-      border: 1px solid #ddd;
+      border: 1px solid ${(props) => props.theme.colors['base-label']};
       border-radius: 3px;
-      color: #666;
+      color: ${(props) => props.theme.colors['base-label']};
       padding: 6px;
       width: 50px;
       text-align: center;
+
       @media (max-width: 640px) {
         width: 36px;
       }
@@ -130,6 +131,7 @@ export const ProductTable = styled.table`
     background: none;
     border: 0;
     padding: 6px 8px;
+
     svg {
       @media (max-width: 640px) {
         width: 24px;
@@ -144,11 +146,12 @@ export const Total = styled.div`
   align-items: baseline;
 
   span {
-    color: #999;
+    color: ${(props) => props.theme.colors['base-text']};
     font-weight: bold;
   }
   strong {
     font-size: 28px;
     margin-left: 5px;
+    margin-bottom: 2rem;
   }
 `

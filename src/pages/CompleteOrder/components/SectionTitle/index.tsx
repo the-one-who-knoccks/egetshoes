@@ -1,4 +1,5 @@
 import { ReactNode } from 'react'
+import { RegularText } from '../../../../components/Typography'
 import { SectionTitleContainer } from './styles'
 
 interface SectionTitleProps {
@@ -12,8 +13,10 @@ export function SectionTitle({ title, subtitle, icon }: SectionTitleProps) {
     <SectionTitleContainer>
       {icon}
       <div>
-        <h2>{title}</h2>
-        <p>{subtitle}</p>
+        <RegularText>{title}</RegularText>
+        <RegularText color="subtitle" size="s">
+          {subtitle}
+        </RegularText>
       </div>
     </SectionTitleContainer>
   )

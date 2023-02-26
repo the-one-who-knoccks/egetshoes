@@ -3,7 +3,7 @@ import Home from './pages/Home'
 import Cart from './pages/Cart'
 
 import React from 'react'
-import { CompleteOrder } from './pages/CompleteOrder'
+import { CompleteOrderPage } from './pages/CompleteOrder'
 import { OrderConfirmed } from './pages/OrderConfirmed'
 
 export class Router extends React.Component {
@@ -11,7 +11,7 @@ export class Router extends React.Component {
     return (
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/address" element={<CompleteOrder />} />
+        <Route path="/address" element={<CompleteOrderPage />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/confirm" element={<OrderConfirmed />} />
       </Routes>

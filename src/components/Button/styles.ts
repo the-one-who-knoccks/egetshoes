@@ -8,7 +8,9 @@ export const ButtonContainer = styled.button`
   font-size: 0.875rem;
   border: none;
   border-radius: 6px;
+  display: flex;
 
+  text-transform: uppercase;
   transition: 0.4s;
   line-height: 1.3rem;
 

@@ -1,68 +1,63 @@
 import styled, { css } from 'styled-components'
-import InputMask from 'react-input-mask'
+
+interface InputStyleContainerProps {
+  hasError: boolean
+}
 
 export const InputWrapper = styled.div`
   display: flex;
   flex-direction: column;
+
   gap: 0.3rem;
   position: relative;
 
   > p {
-    color: ${(props) => props.theme.colors.error};
-    font-size: 0.875rem;
-    font-weight: 400;
+    color: ${({ theme }) => theme.colors['base-error']};
   }
 `
 
-interface InputStyledContainerProps {
-  hasError: boolean
-}
-
-export const InputStyleContainer = styled.div<InputStyledContainerProps>`
+export const InputStyleContainer = styled.div<InputStyleContainerProps>`
   height: 2.625rem;
   border-radius: 4px;
-  border: 1px solid ${(props) => props.theme.colors['base-button']};
-  background: ${(props) => props.theme.colors['base-input']};
+  border: 1px solid ${({ theme }) => theme.colors['base-button']};
+  background: ${({ theme }) => theme.colors['base-input']};
   display: flex;
   align-items: center;
   justify-content: space-between;
   transition: 0.4s;
   overflow: hidden;
 
+  &:focus-within {
+    border-color: ${({ theme }) => theme.colors.purple};
+  }
+
+  ${({ theme, hasError }) =>
+    hasError &&
+    css`
+      border-color: ${({ theme }) => theme.colors['base-error']};
+    `}
+
   svg {
     margin-left: 0.5rem;
-    display: flex;
-    color: ${(props) => props.theme.colors['base-label']};
   }
-
-  &:focus-within {
-    border-color: ${(props) => props.theme.colors['light-purple']};
-  }
-
-  ${(props) =>
-    props.hasError &&
-    css`
-      border-color: ${props.theme.colors.error};
-    `}
 `
 
-export const InputStyled = styled(InputMask)`
+export const RightPlaceholder = styled.p`
+  font-size: 0.75rem;
+  margin-right: 0.75rem;
+  font-style: italic;
+  color: ${({ theme }) => theme.colors['base-label']};
+`
+export const StyledInput = styled.input`
   flex: 1;
   height: 100%;
   background: none;
   border: none;
-  color: ${(props) => props.theme.colors['base-text']};
+  color: ${({ theme }) => theme.colors['base-text']};
   font-size: 0.75rem;
   padding: 0 0.75rem;
 
   &::placeholder {
-    color: ${(props) => props.theme.colors['base-label']};
+    color: ${({ theme }) => theme.colors['base-label']};
   }
-`
-
-export const RightText = styled.p`
-  font-size: 0.75rem;
-  margin-right: 0.75rem;
-  font-style: italic;
-  color: ${(props) => props.theme.colors['base-label']};
 `

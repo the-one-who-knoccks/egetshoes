@@ -1,31 +1,33 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
-export const PaymentMethodContainer = styled.div`
+export const PaymentMethodInputContainer = styled.div`
   input {
     visibility: hidden;
     appearance: none;
   }
 
   input:checked + label div {
-    background: ${(props) => props.theme.colors['light-purple']};
-    border-color: ${(props) => props.theme.colors['light-purple']};
-    color: ${(props) => props.theme.colors.white};
+    ${({ theme }) => css`
+      background: ${theme.colors['light-purple']};
+      color: ${theme.colors.white};
+      border-color: ${theme.colors.purple};
 
-    &:hover {
-      background: ${(props) => props.theme.colors['light-purple']};
-      color: ${(props) => props.theme.colors.white};
-    }
+      svg {
+        color: ${({ theme }) => theme.colors.white};
+      }
 
-    svg {
-      color: ${(props) => props.theme.colors.white};
-    }
+      &:hover {
+        background: ${theme.colors['light-purple']};
+      }
+    `}
   }
 `
 
-export const ContentContainer = styled.div`
+export const Content = styled.div`
+  cursor: pointer;
   padding: 0 1rem;
-  background: ${(props) => props.theme.colors['base-button']};
-  color: ${(props) => props.theme.colors['base-text']};
+  background: ${({ theme }) => theme.colors['base-button']};
+  color: ${({ theme }) => theme.colors['base-text']};
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -34,16 +36,15 @@ export const ContentContainer = styled.div`
   text-transform: uppercase;
   border-radius: 6px;
   height: 3rem;
-  border: 1px solid ${(props) => props.theme.colors['base-button']};
+  border: 1px solid ${({ theme }) => theme.colors['base-button']};
   transition: 0.4s;
-  cursor: pointer;
-
-  &:hover {
-    background: ${(props) => props.theme.colors['base-hover']};
-  }
 
   svg {
-    color: ${(props) => props.theme.colors['base-text']};
+    color: ${({ theme }) => theme.colors.purple};
+  }
+
+  &:hover {
+    background: ${({ theme }) => theme.colors['base-hover']};
   }
 
   user-select: none;
