@@ -3,6 +3,7 @@ import {
   REMOVE_TO_CART,
   CartActionTypes,
   UPDATE_AMOUNT,
+  CLEAR_CART,
 } from './types'
 
 import { IProduct } from '../../../types'
@@ -21,6 +22,12 @@ export function removeToCart(productId: number): CartActionTypes {
   }
 }
 
+export function clearCart(productId: number): CartActionTypes {
+  return {
+    type: CLEAR_CART,
+    payload: productId,
+  }
+}
 export function updateProductAmount(
   productId: number,
   amount: number,

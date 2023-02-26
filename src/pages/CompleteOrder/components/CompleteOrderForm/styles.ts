@@ -11,6 +11,13 @@ export const CompleteOrderFormContainer = styled.div`
 export const FormSectionContainer = styled(SectionBaseStyle)`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 2rem;
   width: 100%;
+
+  & button {
+    display: flex;
+    justify-content: center;
+    width: 18.1rem;
+  }
 `

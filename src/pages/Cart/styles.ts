@@ -11,15 +11,16 @@ export const Container = styled.main`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    @media (max-width: 520px) {
+    /* @media (max-width: 520px) {
       flex-direction: column-reverse;
-    }
+    } */
   }
 `
 
 export const ProductTable = styled.table`
   width: 100%;
   border-collapse: collapse;
+
   thead {
     @media (max-width: 640px) {
       display: none;
@@ -29,12 +30,15 @@ export const ProductTable = styled.table`
     color: #999;
     text-align: left;
     padding: 12px;
+
     &:nth-child(3) {
       text-align: center;
     }
   }
   tbody tr {
+    padding: 12px;
     border-bottom: 1px solid #eee;
+
     @media (max-width: 640px) {
       display: flex;
       flex-wrap: wrap;
@@ -43,6 +47,7 @@ export const ProductTable = styled.table`
   }
   tbody td {
     padding: 12px;
+
     &:first-child {
       @media (max-width: 640px) {
         padding-left: 0;
@@ -98,6 +103,67 @@ export const ProductTable = styled.table`
       }
     }
   }
+
+  @media (max-width: 1120px) {
+    tbody td {
+      padding: 12px;
+
+      &:first-child {
+        @media (max-width: 640px) {
+          padding-left: 0;
+          padding-bottom: 0;
+        }
+      }
+      &:nth-child(2) {
+        @media (max-width: 640px) {
+          flex: 1 1 60%;
+        }
+        @media (max-width: 385px) {
+          flex: 1;
+        }
+        span {
+          @media (max-width: 640px) {
+            font-size: 14px;
+            color: #666;
+          }
+        }
+      }
+      &:nth-child(3),
+      &:nth-child(4),
+      &:nth-child(5) {
+        @media (max-width: 640px) {
+          padding-top: 0;
+          padding-bottom: 0;
+        }
+      }
+      &:nth-child(3) {
+        @media (max-width: 640px) {
+          padding: 0;
+        }
+        @media (max-width: 356px) {
+          flex: 1;
+          div {
+            justify-content: flex-start;
+          }
+        }
+      }
+      &:nth-child(4) {
+        @media (max-width: 640px) {
+          flex: 1;
+          text-align: center;
+          font-size: 16px;
+        }
+        @media (max-width: 356px) {
+          display: none;
+        }
+      }
+      &:nth-child(5) {
+        @media (max-width: 640px) {
+          padding: 12px 0;
+        }
+      }
+    }
+  }
   img {
     height: 100px;
   }
@@ -120,7 +186,7 @@ export const ProductTable = styled.table`
       color: ${(props) => props.theme.colors['base-label']};
       padding: 6px;
       width: 50px;
-      text-align: center;
+      text-align: right;
 
       @media (max-width: 640px) {
         width: 36px;

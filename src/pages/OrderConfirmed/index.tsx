@@ -8,6 +8,7 @@ import { OrderConfirmedListInfo } from './OrderConfirmedListInfo'
 import { paymentMethods } from '../CompleteOrder/components/PaymentMethods'
 import { useEffect } from 'react'
 import Illustration from '../../assets/Illustration.svg'
+
 interface LocationType {
   state: OrderData
 }

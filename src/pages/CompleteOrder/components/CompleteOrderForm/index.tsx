@@ -33,6 +33,7 @@ export function CompleteOrderForm() {
         />
 
         <PaymentMethods />
+        <Button type="submit" text="Finalizar pedido" />
       </FormSectionContainer>
     </CompleteOrderFormContainer>
   )

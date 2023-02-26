@@ -6,6 +6,8 @@ export const REMOVE_TO_CART = 'REMOVE_TO_CART'
 
 export const UPDATE_AMOUNT = 'UPDATE_AMOUNT'
 
+export const CLEAR_CART = 'CLEAR_CART'
+
 export interface ICartState {
   products: IProduct[]
 }
@@ -26,7 +28,13 @@ interface UpdateCartProductAmount {
   amount: number
 }
 
+interface ClearCart {
+  type: typeof CLEAR_CART
+  payload: number
+}
+
 export type CartActionTypes =
   | AddToCartAction
   | RemoveToCart
   | UpdateCartProductAmount
+  | ClearCart

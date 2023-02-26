@@ -57,6 +57,15 @@ export const StyledInput = styled.input`
   font-size: 0.75rem;
   padding: 0 0.75rem;
 
+  ::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  ::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
   &::placeholder {
     color: ${({ theme }) => theme.colors['base-label']};
   }
