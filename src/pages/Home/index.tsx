@@ -10,7 +10,7 @@ import { IProduct } from '../../types'
 
 import { RootState } from '../../store/modules/rootReducer'
 import * as CartActions from '../../store/modules/cart/actions'
-import { Input } from '../AdressForm/Input'
+import { Input } from '../../components/Input'
 import { Funnel } from 'phosphor-react'
 
 type amountProduct = { [key: number]: any }
@@ -83,7 +83,6 @@ function Home(props: Props) {
               </button>
             </li>
           ))}
-        )
       </ProductList>
     </>
   )

@@ -5,8 +5,9 @@ import { MdShoppingBasket } from 'react-icons/md'
 import { connect } from 'react-redux'
 import ReturnType from 'typescript'
 import { Container, Cart } from './styles'
-import logo from '../../assets/images/logo.svg'
+import logo from '../../assets/images/logo.png'
 import { RootState } from '../../store/modules/rootReducer'
+import { ShoppingCart } from 'phosphor-react'
 
 const mapStateToProps = (state: RootState) => ({
   cartAmount: state.cart.products.length,
@@ -24,7 +25,7 @@ function Header({ cartAmount }: ReturnType<typeof mapStateToProps>) {
           <strong>Meu carrinho</strong>
           <span> {cartAmount} itens</span>
         </div>
-        <MdShoppingBasket size={36} color="#fff" />
+        <ShoppingCart size={24} color="#fff" />
       </Cart>
     </Container>
   )

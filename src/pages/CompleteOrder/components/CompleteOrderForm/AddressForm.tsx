@@ -1,5 +1,5 @@
 import { useFormContext } from 'react-hook-form'
-import { Input } from '../../../../pages/AdressForm/Input'
+import { Input } from '../../../../components/Input'
 import { AddressFormContainer } from './styles'
 
 interface ErrorsType {
@@ -25,12 +25,14 @@ export function AddressForm() {
         error={errors.cep?.message}
       />
       <Input
+        mask=""
         placeholder="Rua"
         className="street"
         {...register('street')}
         error={errors.street?.message}
       />
       <Input
+        mask={''}
         placeholder="Número"
         type="tel"
         {...register('number')}
@@ -43,6 +45,7 @@ export function AddressForm() {
         rightText="Opcional"
       />
       <Input
+        mask={''}
         placeholder="Bairro"
         {...register('district')}
         error={errors.district?.message}

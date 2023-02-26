@@ -45,6 +45,7 @@ export default function cart(
         }
       })
     }
+
     default:
       return state
   }

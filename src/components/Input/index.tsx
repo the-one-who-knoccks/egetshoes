@@ -1,5 +1,5 @@
-import ReactInputMask from 'react-input-mask'
 import React, { forwardRef, InputHTMLAttributes } from 'react'
+import ReactInputMask from 'react-input-mask'
 import {
   InputStyleContainer,
   InputWrapper,

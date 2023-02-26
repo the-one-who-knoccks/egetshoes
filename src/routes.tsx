@@ -4,6 +4,7 @@ import Cart from './pages/Cart'
 
 import React from 'react'
 import { CompleteOrder } from './pages/CompleteOrder'
+import { OrderConfirmed } from './pages/OrderConfirmed'
 
 export class Router extends React.Component {
   render() {
@@ -12,6 +13,7 @@ export class Router extends React.Component {
         <Route path="/" element={<Home />} />
         <Route path="/address" element={<CompleteOrder />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/confirm" element={<OrderConfirmed />} />
       </Routes>
     )
   }

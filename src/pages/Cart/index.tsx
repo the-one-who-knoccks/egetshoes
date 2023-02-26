@@ -104,23 +104,18 @@ function Cart(props: Props) {
             </tbody>
           </ProductTable>
         ))}
+        <footer>
+          <Button
+            disabled={Number(products) <= 0}
+            onClick={handleConfirmOrder}
+            text="Endereço | Finalizar compra"
+          />
 
-        {products <= 0 ? (
-          <footer>
-            <Button
-              disabled
-              onClick={handleConfirmOrder}
-              text="Endereço | Finalizar compra"
-            />
-          </footer>
-        ) : (
-          <footer>
-            <Button
-              onClick={handleConfirmOrder}
-              text="Endereço | Finalizar compra"
-            />
-          </footer>
-        )}
+          <Total>
+            <span>TOTAL</span>
+            <strong>{total}</strong>
+          </Total>
+        </footer>
       </Container>
     </>
   )

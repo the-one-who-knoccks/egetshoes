@@ -4,8 +4,13 @@ import { MapPinLine, CurrencyDollar } from 'phosphor-react'
 import { useTheme } from 'styled-components'
 import { AddressForm } from './AddressForm'
 import { PaymentMethodOptions } from './PaymentMethodOptions'
+import ptBR from 'date-fns/locale/pt-BR'
+import { format } from 'date-fns'
+import { useState } from 'react'
+import { Button } from '../../../../components/Button'
 
 export function CompleteOrderForm() {
+  const [actualDay] = useState(new Date())
   const theme = useTheme()
 
   return (
@@ -19,6 +24,12 @@ export function CompleteOrderForm() {
           icon={<MapPinLine size={22} color={theme.colors.purple} />}
         />
 
+        <span>
+          {format(actualDay, 'dd MMMM yyyy, HH:MM', {
+            locale: ptBR,
+          })}
+        </span>
+
         <AddressForm />
       </FormSectionContainer>
 
@@ -30,6 +41,7 @@ export function CompleteOrderForm() {
         />
 
         <PaymentMethodOptions />
+        <Button text="Confirmar pedido" type="submit" />
       </FormSectionContainer>
     </CompleteOrderFormContainer>
   )

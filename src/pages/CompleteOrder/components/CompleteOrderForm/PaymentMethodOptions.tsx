@@ -13,7 +13,7 @@ export const paymentMethods = {
     icon: <Bank size={16} />,
   },
   money: {
-    label: 'Dinheiro',
+    label: 'Boleto',
     icon: <Money size={16} />,
   },
 }
