@@ -31,7 +31,6 @@ type Props = StateProps & DispatchProp
 
 function Home(props: Props) {
   const [products, setProducts] = useState<IProduct[]>([])
-
   const [query, setQuery] = useState('')
 
   useAsyncEffect(async () => {
