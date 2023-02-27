@@ -52,28 +52,27 @@
 
 </br>
 
+## Para acessar o deploy da aplicação, acesse:
 
+### <a>https://egetshoes.vercel.app/</a> 
 ## Para executar o projeto localmente:
 
 Clone o projeto e acesse a pasta 
 ecommerce
 
 ```bash
-$ git clone https://github.com/the-one-who-knoccks/ecommerce
+$ git clone https://github.com/the-one-who-knoccks/egetshoes
 
-$ cd ecommerce
+$ cd egetshoes
 
 ```
 Para iniciá-lo, siga os passos abaixo:
 ```bash
 # Instalar as dependências
-$ npm install ou yarn install
+$ Execute install ou yarn install
 
 # Iniciar o projeto
-$ npm run server, ou yarn dev server para iniciar
-o json server
-
-Em outro terminal, execute npm run dev ou yarn dev para iniciar o projeto
+$ Execute npm run dev ou yarn dev para iniciar o projeto
 ```
 A aplicação será iniciada no endereço http://localhost:3000.
 
