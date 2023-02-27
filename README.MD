@@ -31,7 +31,7 @@
 
  ## 💻 Projeto
  
-### Projeto faz parte do teste para a vaga de desenvolvedor front-end pleno da e-Get.
+ Projeto faz parte do teste para a vaga de desenvolvedor front-end pleno da e-Get.
 </br>
 
 
