@@ -9,6 +9,7 @@ interface TitleTextProps {
 interface RegularTextProps {
   size?: 'l' | 'm' | 's'
   color?: 'text' | 'subtitle' | 'label' | 'text-h1'
+  weight?: string | number
 }
 
 export const TitleText = styled.h1<TitleTextProps>`
