@@ -21,16 +21,26 @@
 
  ## 💻 Projeto
  
-Projeto faz parte do teste para a vaga de desenvolvedor front-end pleno da e-Get.
+### Projeto faz parte do teste para a vaga de desenvolvedor front-end pleno da e-Get.
+</br>
+
 
  ##  Tecnologias utilizadas para o desenvolvimento da aplicação
 
 - [ViteJS](https://vitejs.dev/) ;
 - [ReactJS](https://pt-br.reactjs.org/) ;
 - [Typescript](https://www.typescriptlang.org/) ;
+- [Styled Components](https://styled-components.com/) ;
+- [Redux](https://redux.js.org/) ;
+- [Redux Toolkit](https://redux-toolkit.js.org/)
+- [Redux Persist](https://www.npmjs.com/package/redux-persist)
+- [Axios](https://axios-http.com/docs/intro)
+- [Immer](https://axios-http.com/docs/intro)
+- [Zod](https://axios-http.com/docs/intro)
+- [Eslint](https://eslint.org/)
 - [Phosphor Icons](https://phosphoricons.com/) ;
 
-
+</br>
 
 
 ## Para executar o projeto localmente:
