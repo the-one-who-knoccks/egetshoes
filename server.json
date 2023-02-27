@@ -28,38 +28,38 @@
   "products": [
     {
       "id": 1,
-      "title": "Tênis de Caminhada Leve e Macio Preto",
+      "title": "Tenis de Caminhada Leve e Macio Preto",
       "price": 179.9,
       "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis1.jpg"
     },
     {
       "id": 2,
-      "title": "Tênis de Caminhada Leve e Macio Preto",
+      "title": "Tenis de Caminhada Leve e Macio Preto",
       "price": 139.9,
       "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis1.jpg"
     },
     {
       "id": 3,
 
-      "title": "Tênis de Corrida Leve e Macio Branco",
+      "title": "Tenis de Corrida Leve e Macio Branco",
       "price": 219.9,
       "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis3.jpg"
     },
     {
       "id": 5,
-      "title": "Tênis de Caminhada leve Preto e Branco",
+      "title": "Tenis de Caminhada leve Preto e Branco",
       "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis2.jpg",
       "price": 219.9
     },
     {
       "id": 6,
-        "title": "Tênis de Caminhada leve Preto e Branco",
+        "title": "Tenis de Caminhada leve Preto e Branco",
       "price": 219.9,
       "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis3.jpg"
     },
     {
       "id": 4,
-      "title": "Tênis de Caminhada Leve Macio Preto",
+      "title": "Tenis de Caminhada Leve Macio Preto",
       "price": 179.9,
       "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis1.jpg"
     }
