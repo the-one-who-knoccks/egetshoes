@@ -7,6 +7,13 @@
 </br>
 </br>
 
+<div align='center'>
+  <img  src="src/assets/preview/prev.gif" alt="Logo">
+</div>
+</br>
+</br>
+
+
 
 
 
