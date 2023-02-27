@@ -169,9 +169,14 @@ export const ProductTable = styled.table`
     height: 100px;
   }
   strong {
+    display: inline-block;
   }
   span {
-    margin-top: 4px;
+    position: relative;
+    top: 0.4rem;
+    align-items: center;
+    justify-content: flex-start;
+
     font-size: 18px;
     font-weight: bold;
   }
@@ -179,6 +184,7 @@ export const ProductTable = styled.table`
     display: flex;
     align-items: center;
     justify-content: center;
+
     input {
       border: 1px solid ${(props) => props.theme.colors['base-label']};
       border-radius: 3px;
