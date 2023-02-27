@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { defaultTheme } from './styles/themes/default'
 import { GlobalStyle } from './styles/global'
 import Header from './components/Header'
-import { store, persistor } from './store'
+import { store, persistor } from './store/persistReducers'
 import { PersistGate } from 'redux-persist/integration/react'
 import { ThemeProvider } from 'styled-components'
 

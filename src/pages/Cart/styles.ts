@@ -218,6 +218,6 @@ export const Total = styled.div`
   strong {
     font-size: 28px;
     margin-left: 5px;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
 `

@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "server": "json-server server.json -p 3333"
   },
   "dependencies": {
     "@hookform/resolvers": "^2.9.11",
