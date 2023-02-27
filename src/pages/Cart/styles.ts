@@ -18,7 +18,8 @@ export const Container = styled.main`
 `
 
 export const ProductTable = styled.table`
-  width: 100%;
+  width: 80%;
+  margin-left: 2.5rem;
   border-collapse: collapse;
 
   thead {
@@ -168,10 +169,8 @@ export const ProductTable = styled.table`
     height: 100px;
   }
   strong {
-    display: block;
   }
   span {
-    display: block;
     margin-top: 4px;
     font-size: 18px;
     font-weight: bold;
