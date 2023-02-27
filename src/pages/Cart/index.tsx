@@ -114,7 +114,7 @@ function Cart(props: Props) {
           <Button
             disabled={Number(products) <= 0}
             onClick={handleConfirmOrder}
-            text="Endereço | Finalizar compra"
+            text="Continuar"
           />
 
           <Total>
