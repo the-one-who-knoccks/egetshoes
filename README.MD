@@ -69,7 +69,7 @@ $ cd egetshoes
 Para iniciá-lo, siga os passos abaixo:
 ```bash
 # Instalar as dependências
-$ Execute install ou yarn install
+$ Execute npm install ou yarn install
 
 # Iniciar o projeto
 $ Execute npm run dev ou yarn dev para iniciar o projeto
