@@ -45,7 +45,7 @@ export function CompleteOrderPage() {
     navigate('/confirm', {
       state: data,
     })
-    toast.success('Produto adicionado ao carrinho', {
+    toast.success('Pedido enviado com sucesso!', {
       position: 'top-right',
       autoClose: 2000,
       hideProgressBar: false,
